@@ -1,0 +1,24 @@
+<h3>Login</h3>
+<br/>
+<?php if ($this->error): ?>
+    <p> Usuário ou senha Inválidos</p>
+<?php endif; ?>
+
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('sonuser-auth'));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+//echo $this->formCollection($form);
+?>
+<?php echo $this->formLabel($form->get('email')); ?>
+<?php echo $this->formElement($form->get('email')); ?>
+<br/>
+<?php echo $this->formLabel($form->get('password')); ?>
+<?php echo $this->formElement($form->get('password')); ?>
+<br/>
+<?php echo $this->formElement($form->get('submit')); ?>
+
+<?php echo $this->form()->closeTag(); ?>
+        
